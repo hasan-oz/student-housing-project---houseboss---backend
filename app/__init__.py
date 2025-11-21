@@ -2,6 +2,8 @@ from flask import Flask
 from app.config import Config
 from app.database import db
 from flask_jwt_extended import JWTManager
+from app.routes.students import students_bp
+
 
 def create_app():
     app = Flask(__name__)
@@ -23,5 +25,6 @@ def create_app():
     app.register_blueprint(events_bp, url_prefix="/events")
     app.register_blueprint(rules_bp, url_prefix="/rules")
     app.register_blueprint(contacts_bp, url_prefix="/contacts")
+    app.register_blueprint(students_bp, url_prefix="/students")
 
     return app
