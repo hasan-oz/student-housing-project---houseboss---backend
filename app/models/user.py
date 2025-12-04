@@ -10,3 +10,4 @@ class User(db.Model):
     role = db.Column(db.String, default="student", nullable=False)
     password_hash = db.Column(db.String, nullable=False)
     created_at = db.Column(db.String, nullable=False)
+    salt          = db.Column(db.String, nullable=False)
